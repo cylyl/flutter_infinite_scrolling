@@ -26,13 +26,11 @@ class Item {
 }
 
 Future<List<Item>> _loadItems(int offset, int limit) {
-  var random = new Random();
-  return Future.delayed(new Duration(seconds: 2 + random.nextInt(3)), () {
-    return List.generate(limit, (index) {
-      var id = offset + index;
-      return new Item(id: id, name: "Item $id");
-    });
-  });
+//  var random = new Random();
+  return Future.value( List.generate(limit, (index) {
+    var id = offset + index;
+    return new Item(id: id, name: "Item $id");
+  }));
 }
 
 var total = 105;
